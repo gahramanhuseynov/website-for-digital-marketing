@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background: #1f1f1f;
+    color: #eeebd3;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    color: #eeebd3;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+    opacity: 0;
+    animation: slideIn 1.5s ease-in-out forwards;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.2);
+    color: #b37845;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #eeebd3;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .4s;
+}
+
+.navbar a:hover {
+    color: #b37845;
+}
+
+.home {
+    height: 100vh;
+    background: url('home.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #b37845;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+.home-content .btn-box a {
+    display: inline-block;
+    position: relative;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #b37845;
+    text-decoration: none;
+    border: 2px solid #b37845;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: color 0.3s ease-in-out;
+}
+
+.home-content .btn-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #b37845;
+    z-index: -1;
+    transition: left 0.3s ease-in-out;
+}
+
+.home-content .btn-box a:hover {
+    color: #eeebd3;
+}
+
+.home-content .btn-box a:hover::before {
+    left: 0;
+}
+
+.home-content .btn-box a {
+    position: relative;
+    z-index: 1;
+}
+
+.about {
+    padding: 80px 10%;
+    background-color: #292929;
+    color: #eeebd3;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #b37845;
+    text-transform: uppercase;
+}
+
+.about p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.about-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.about-card {
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    flex: 1 1 calc(30% - 20px);
+    max-width: 300px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #b37845;
+}
+
+.about-card p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+}
+
+.services {
+    padding: 80px 10%;
+    background-color: #1f1f1f;
+    text-align: center;
+    color: #eeebd3;
+}
+
+.services h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #b37845;
+    text-transform: uppercase;
+}
+
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-card {
+    background: #292929;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    flex: 1 1 calc(30% - 20px);
+    max-width: 300px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #b37845;
+}
+
+.service-card p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.contact {
+    padding: 80px 10%;
+    background-color: #292929;
+    text-align: center;
+    color: #eeebd3;
+}
+
+.contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #b37845;
+    text-transform: uppercase;
+}
+
+.contact p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px 15px;
+    background: #1f1f1f;
+    color: #eeebd3;
+    border: 1px solid #b37845;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+}
+
+.contact-form button {
+    background: #b37845;
+    color: #1f1f1f;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+    background: #eeebd3;
+    color: #1f1f1f;
+}
+
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .home-content h1 {
+        font-size: 48px;
+    }
+
+    .home-content h3 {
+        font-size: 28px;
+    }
+
+    .about-card,
+    .service-card {
+        flex: 1 1 calc(45% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 10px 5%;
+    }
+
+    .navbar a {
+        margin: 10px 0;
+    }
+
+    .about-card,
+    .service-card {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-content h1 {
+        font-size: 36px;
+    }
+
+    .home-content h3 {
+        font-size: 24px;
+    }
+
+    .btn-box a {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none; /* Navbar'ı gizler */
+    }
+
+    .logo {
+        display: block; /* Logoyu görünür tutar */
+    }
+}
